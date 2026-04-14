@@ -15,7 +15,7 @@ export const categories = [
         id: 3,
         title: "Series",
         link: "/dashboard/Series",
-        thumbnail: "/shows.jpeg"
+        video: "/series.mp4"
     },
     {
         id: 4,
