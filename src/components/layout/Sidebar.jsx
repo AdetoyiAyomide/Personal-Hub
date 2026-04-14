@@ -14,7 +14,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   }, [location.pathname]);
 
   return (
-    <aside className="fixed top-0 left-0 h-screen w-64 bg-white/5 backdrop-blur-xl border-r border-white/10 text-white p-5 rounded-r-4xl">
+    <aside
+      className={`fixed top-0 left-0 h-screen w-40 lg:w-64 bg-white/5 backdrop-blur-xl border-r border-white/10 text-white p-5 rounded-r-4xl transition-transform duration-300 ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}
+    >
 
       {/* Header */}
       <div className="mb-8">

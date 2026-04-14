@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import '../../App.css'
 
 const Layout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev)
+  }
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#0b0f1a]">
 
@@ -29,10 +35,10 @@ const Layout = () => {
   {/* 🧊 App Content */}
   <div className="relative z-10 flex">
 
-    <Sidebar />
+    <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-    <div className="flex-1 flex flex-col ml-64">
-      <Header />
+    <div className={`flex-1 flex flex-col transition-all duration-300 ${isSidebarOpen ? 'ml-40 lg:ml-64' : 'ml-0'}`}>
+      <Header toggleSidebar={toggleSidebar} />
 
       <main className="flex-1 p-6 overflow-auto">
         <Outlet />

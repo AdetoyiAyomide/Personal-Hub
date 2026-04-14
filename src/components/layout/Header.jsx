@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom'
 import { IoSearchSharp, IoBackspaceOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 import { FaPowerOff } from "react-icons/fa"
+import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ toggleSidebar }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('')
@@ -56,6 +57,14 @@ const Header = () => {
         <p className='text-xs uppercase tracking-[0.3em] text-white/50'>Current page</p>
         <h1 className='text-2xl font-semibold capitalize tracking-wide'>{pageLabel}</h1>
       </div>
+
+      <button
+        type='button'
+        onClick={toggleSidebar}
+        className='rounded-xl border border-white/15 bg-white/5 p-3 text-lg transition hover:bg-white/10'
+      >
+        <GiHamburgerMenu />
+      </button>
 
       <div className='w-full max-w-xl'>
         <label className='flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-lg backdrop-blur-md transition-colors focus-within:border-cyan-400/60 focus-within:bg-white/8'>
