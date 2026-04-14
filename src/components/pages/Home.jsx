@@ -37,62 +37,55 @@ const Home = () => {
           </div>
         </header>
 
-
-
-{/*  */}
-
-{/*  */}
-
-
         {/* Main */}
         <main className="flex-1 flex items-center justify-center overflow-auto">
 
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6">
+          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
 
             {categories.map((item) => (
-  <div
-    key={item.id}
-    onClick={() => navigate(item.link)}
-    className="relative drop-shadow-xl w-46 lg:w-60 h-50 overflow-hidden rounded-xl bg-[#3d3c3d] cursor-pointer"
-  >
-    {/* INNER CARD */}
-    <div className="absolute inset-0.5 z-[1] flex flex-col rounded-xl bg-[#323132] text-white opacity-95">
+              <div
+                key={item.id}
+                onClick={() => navigate(item.link)}
+                className="relative drop-shadow-xl w-46 lg:w-60 h-50 overflow-hidden rounded-xl bg-[#3d3c3d] cursor-pointer"
+              >
+                {/* INNER CARD */}
+                <div className="absolute inset-0.5 z-[1] flex flex-col rounded-xl bg-[#323132] text-white opacity-95">
 
-      {/* MEDIA */}
-      <div className="flex-1 overflow-hidden rounded-t-xl">
-        {item.thumbnail && (
-          <img
-            src={item.thumbnail}
-            className="w-full h-full object-cover"
-          />
-        )}
+                  {/* MEDIA */}
+                  <div className="flex-1 overflow-hidden rounded-t-xl">
+                    {item.thumbnail && (
+                      <img
+                        src={item.thumbnail}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
 
-        {item.video && (
-          <video
-            src={item.video}
-            className="w-full h-full object-cover"
-            muted
-            loop
-            playsInline
-            onMouseEnter={(e) => {
-              e.target.currentTime = 0;
-              e.target.play();
-            }}
-            onMouseLeave={(e) => e.target.pause()}
-          />
-        )}
-      </div>
+                    {item.video && (
+                      <video
+                        src={item.video}
+                        className="w-full h-full object-cover"
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => {
+                          e.target.currentTime = 0;
+                          e.target.play();
+                        }}
+                        onMouseLeave={(e) => e.target.pause()}
+                      />
+                    )}
+                  </div>
 
-      {/* TITLE */}
-      <div className="py-3 text-center bg-[#2a2a2a]">
-        <h2 className="font-semibold text-lg">{item.title}</h2>
-      </div>
-    </div>
+                  {/* TITLE */}
+                  <div className="py-3 text-center bg-[#2a2a2a]">
+                    <h2 className="font-semibold text-lg">{item.title}</h2>
+                  </div>
+                </div>
 
-    {/* GLOW EFFECT */}
-    <div className="absolute w-56 h-48 bg-white blur-[50px] -left-1/2 -top-1/2" />
-  </div>
-))}
+                {/* GLOW EFFECT */}
+                <div className="absolute w-56 h-48 bg-white blur-[50px] -left-1/2 -top-1/2" />
+              </div>
+            ))}
 
           </div>
 
