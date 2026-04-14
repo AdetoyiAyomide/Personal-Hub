@@ -94,5 +94,12 @@ export const codingLinks = [
         subtitle: "For hosting react native sites",
         link: "https://expo.dev/home",
         thumbnail: "https://image.thum.io/get/https://expo.dev",
+    },
+    {
+        id: 11,
+        title: "Css Loader",
+        subtitle: "600+ single element loaders",
+        link: "https://css-loaders.com/classic/",
+        thumbnail: "https://image.thum.io/get/https://css-loaders.com/classic/",
     }
 ]
