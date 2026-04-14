@@ -37,58 +37,62 @@ const Home = () => {
           </div>
         </header>
 
+
+
+{/*  */}
+
+{/*  */}
+
+
         {/* Main */}
         <main className="flex-1 flex items-center justify-center overflow-auto">
 
-          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          <div className="px-3 grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6">
 
             {categories.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => navigate(item.link)}
-                className="rounded-2xl shadow-2xl border border-purple-900 overflow-hidden transform transition duration-300 hover:scale-105"
-              >
+  <div
+    key={item.id}
+    onClick={() => navigate(item.link)}
+    className="relative drop-shadow-xl w-46 lg:w-60 h-50 overflow-hidden rounded-xl bg-[#3d3c3d] cursor-pointer"
+  >
+    {/* INNER CARD */}
+    <div className="absolute inset-0.5 z-[1] flex flex-col rounded-xl bg-[#323132] text-white opacity-95">
 
-                {/* MEDIA */}
-                <div className="relative group">
+      {/* MEDIA */}
+      <div className="flex-1 overflow-hidden rounded-t-xl">
+        {item.thumbnail && (
+          <img
+            src={item.thumbnail}
+            className="w-full h-full object-cover"
+          />
+        )}
 
-                  {/* IMAGE */}
-                  {item.thumbnail && (
-                    <img
-                      src={item.thumbnail}
-                      className="w-40 h-32 lg:w-60 lg:h-52 object-cover"
-                    />
-                  )}
+        {item.video && (
+          <video
+            src={item.video}
+            className="w-full h-full object-cover"
+            muted
+            loop
+            playsInline
+            onMouseEnter={(e) => {
+              e.target.currentTime = 0;
+              e.target.play();
+            }}
+            onMouseLeave={(e) => e.target.pause()}
+          />
+        )}
+      </div>
 
-                  {/* VIDEO */}
-                  {item.video && (
-                    <video
-                      src={item.video}
-                      className="w-40 h-32 lg:w-60 lg:h-52 object-cover"
-                      muted
-                      loop
-                      playsInline
-                      onMouseEnter={(e) => {
-                        e.target.currentTime = 0;
-                        e.target.play();
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.pause();
-                      }}
-                    />
-                  )}
+      {/* TITLE */}
+      <div className="py-3 text-center bg-[#2a2a2a]">
+        <h2 className="font-semibold text-lg">{item.title}</h2>
+      </div>
+    </div>
 
-                </div>
-
-                {/* TITLE */}
-                <div className="py-3 px-3 bg-gray-800 text-center">
-                  <h2 className="font-semibold text-lg text-white">
-                    {item.title}
-                  </h2>
-                </div>
-
-              </div>
-            ))}
+    {/* GLOW EFFECT */}
+    <div className="absolute w-56 h-48 bg-white blur-[50px] -left-1/2 -top-1/2" />
+  </div>
+))}
 
           </div>
 
