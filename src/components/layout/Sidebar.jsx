@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, NavLink, useLocation } from 'react-router-dom'
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navigate = useNavigate();
@@ -21,10 +22,16 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     >
 
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-8 flex items-center">
         <h1 className="text-lg font-semibold tracking-wide text-white/80">
           Hades Hub
         </h1>
+        <button
+                type='button'
+                onClick={toggleSidebar}
+                className='rounded-xl border border-white/15 bg-white/5 p-3 text-lg transition hover:bg-white/10'>
+                <GiHamburgerMenu />
+              </button>
       </div>
 
       {/* Menu */}

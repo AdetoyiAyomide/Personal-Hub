@@ -3,10 +3,9 @@ import { useLocation } from 'react-router-dom'
 import { IoSearchSharp, IoBackspaceOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 import { FaPowerOff } from "react-icons/fa"
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({ toggleSidebar }) => {
+const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState('')
@@ -58,13 +57,6 @@ const Header = ({ toggleSidebar }) => {
         <h1 className='text-2xl font-semibold capitalize tracking-wide'>{pageLabel}</h1>
       </div>
 
-      <button
-        type='button'
-        onClick={toggleSidebar}
-        className='rounded-xl border border-white/15 bg-white/5 p-3 text-lg transition hover:bg-white/10'
-      >
-        <GiHamburgerMenu />
-      </button>
 
       <div className='w-full max-w-xl'>
         <label className='flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-lg backdrop-blur-md transition-colors focus-within:border-cyan-400/60 focus-within:bg-white/8'>
@@ -85,7 +77,7 @@ const Header = ({ toggleSidebar }) => {
         </label>
       </div>
       {/* add link */}
-      <div className='flex gap-4'>
+      <div className='hidden lg:flex gap-4'>
         <button className='rounded-lg flex items-center gap-2 bg-[linear-gradient(143deg,_rgba(255,255,255,1)_0%,_rgba(119,14,194,1)_21%,_rgba(138,16,199,1)_81%,_rgba(255,255,255,1)_100%)] p-2'>
           <FaPlus />
           Add Link
@@ -93,7 +85,7 @@ const Header = ({ toggleSidebar }) => {
 
          <button
             onClick={() => navigate("/shutdown")}
-            className="p-3 text-white text-xl bg-blue-500/80 backdrop-blur-md rounded-full hover:bg-red-600 hover:scale-110 transition-all duration-300 shadow-lg z-50">
+            className="p-3 items-center text-white text-xl bg-blue-500/80 backdrop-blur-md rounded-full hover:bg-red-600 hover:scale-110 transition-all duration-300 shadow-lg z-50">
             <FaPowerOff />
           </button>
       </div>
