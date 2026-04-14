@@ -46,10 +46,10 @@ const Home = () => {
               <div
                 key={item.id}
                 onClick={() => navigate(item.link)}
-                className="relative drop-shadow-xl w-46 lg:w-60 h-50 overflow-hidden rounded-xl bg-[#3d3c3d] cursor-pointer"
+                className="relative drop-shadow-xl w-42 lg:w-60 h-45 overflow-hidden rounded-xl bg-[#3d3c3d] cursor-pointer"
               >
                 {/* INNER CARD */}
-                <div className="absolute inset-0.5 z-[1] flex flex-col rounded-xl bg-[#323132] text-white opacity-95">
+                <div className="absolute inset-0.5 z-1 flex flex-col rounded-xl bg-[#323132] text-white opacity-95">
 
                   {/* MEDIA */}
                   <div className="flex-1 overflow-hidden rounded-t-xl">
