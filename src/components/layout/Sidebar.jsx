@@ -26,12 +26,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <h1 className="text-lg font-semibold tracking-wide text-white/80">
           Hades Hub
         </h1>
-        <button
-                type='button'
-                onClick={toggleSidebar}
-                className='rounded-xl border border-white/15 bg-white/5 p-3 text-lg transition hover:bg-white/10'>
-                <GiHamburgerMenu />
-              </button>
       </div>
 
       {/* Menu */}
