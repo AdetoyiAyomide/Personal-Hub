@@ -64,7 +64,7 @@ const Home = () => {
                       <video
                         src={item.video}
                         className="w-full h-full object-cover"
-                        muted
+                        
                         loop
                         playsInline
                         onMouseEnter={(e) => {
