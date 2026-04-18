@@ -64,14 +64,19 @@ const Home = () => {
                       <video
                         src={item.video}
                         className="w-full h-full object-cover"
-                        
                         loop
                         playsInline
+                        muted
+                        onLoadedMetadata={(e) => {
+                          e.target.volume = 0.2;
+                        }}
                         onMouseEnter={(e) => {
                           e.target.currentTime = 0;
                           e.target.play();
                         }}
-                        onMouseLeave={(e) => e.target.pause()}
+                        onMouseLeave={(e) => {
+                          e.target.pause();
+                        }}
                       />
                     )}
                   </div>
