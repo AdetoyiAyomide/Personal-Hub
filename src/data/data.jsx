@@ -103,3 +103,22 @@ export const codingLinks = [
         thumbnail: "https://image.thum.io/get/https://css-loaders.com/classic/",
     }
 ]
+
+export const projects = [
+{
+    id: 1,
+    name: "PROJECT OMNI",
+    progress: 65,
+    tasksCompleted: 13,
+    tasksTotal: 20,
+    status: "In Progress"
+},
+{
+    id: 2,
+    name: "Portfolio Website",
+    progress: 40,
+    tasksCompleted: 4,
+    tasksTotal: 10,
+    status: "In Progress"
+}
+];
